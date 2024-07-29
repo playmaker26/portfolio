@@ -190,6 +190,11 @@ section {
   width: 100%;
 }
 
+footer {
+  height: 89px;
+  width: 100%;
+}
+
 @media only screen and (max-width: 767px) {
   .wrapper {
     width: 290px;
@@ -547,5 +552,10 @@ section {
 
   main .home article a:hover {
     border: 1px solid #e31977;
+  }
+
+  header nav ul li a.active {
+    color: #ffdd45;
+    font-weight: 900;
   }
 }
