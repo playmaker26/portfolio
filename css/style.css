@@ -187,6 +187,9 @@ body {
 .wrapper {
   position: relative;
   min-height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 main {
@@ -206,7 +209,6 @@ footer {
 @media only screen and (max-width: 767px) {
   .wrapper {
     width: 290px;
-    margin: auto;
   }
   .header {
     width: 100%;
@@ -295,7 +297,7 @@ footer {
   }
 
   main {
-    margin: 35px 86px;
+    margin: 35px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -323,6 +325,7 @@ footer {
     flex-direction: column;
     gap: 8px;
     width: 290px;
+    margin: 0 auto;
   }
 
   main .home article h1,
@@ -347,7 +350,7 @@ footer {
     color: #000;
     font-weight: bold;
     font-size: 18px;
-    width: 135px;
+    width: 175px;
     background-color: #ffdd45;
     padding: 10px;
     border-radius: 5px;
@@ -536,7 +539,7 @@ footer {
     color: #000;
     font-weight: bold;
     font-size: 20px;
-    width: 158px;
+    width: 175px;
     background-color: #ffdd45;
     padding: 10px;
     border-radius: 5px;
@@ -616,11 +619,11 @@ footer {
   }
 
   main .home figure {
-    width: 513px;
+    width: 420px;
   }
 
   main .home article {
-    width: 509px;
+    width: 420px;
   }
 
   main .home article h1 {
@@ -632,7 +635,9 @@ footer {
     line-height: 18px;
   }
 
-  main .home article a {
+  main .home article a,
+  footer nav ul li a,
+  footer article figure i {
     transition: all ease-in 300ms;
   }
 
@@ -643,5 +648,10 @@ footer {
   header nav ul li a.active {
     color: #ffdd45;
     font-weight: 900;
+  }
+
+  footer nav ul li a:hover,
+  footer article figure i:hover {
+    color: #e31977;
   }
 }
