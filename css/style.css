@@ -177,13 +177,20 @@ select {
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   background-color: #0169ca;
-  min-height: 100vh;
 }
 .wrapper {
   position: relative;
   min-height: 100vh;
+}
+
+main {
+  min-height: calc(100vh - 127px);
 }
 
 section {
@@ -191,6 +198,7 @@ section {
 }
 
 footer {
+  background-color: #0169ca;
   height: 89px;
   width: 100%;
 }
@@ -288,6 +296,10 @@ footer {
 
   main {
     margin: 35px 86px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   main .home {
@@ -340,6 +352,41 @@ footer {
     padding: 10px;
     border-radius: 5px;
     text-align: center;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: auto;
+    align-items: center;
+    gap: 38px;
+  }
+
+  footer nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  footer nav ul li a {
+    font-size: 8px;
+    font-family: Montserrat;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  footer article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 145px;
+    gap: 10px;
+  }
+  footer article figure i {
+    width: 25px;
+    color: #fff;
   }
 }
 
@@ -435,7 +482,11 @@ footer {
   }
 
   main {
-    margin: 80px 86px;
+    margin: 80px 219px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   main .home {
@@ -490,6 +541,41 @@ footer {
     padding: 10px;
     border-radius: 5px;
     text-align: center;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 38px;
+  }
+
+  footer nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  footer nav ul li a {
+    font-size: 8px;
+    font-family: Montserrat;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  footer article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 145px;
+    gap: 10px;
+  }
+  footer article figure i {
+    width: 25px;
+    color: #fff;
   }
 }
 
