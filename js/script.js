@@ -32,3 +32,37 @@ navLinks.forEach(link => {
 });
 }
 activeLink();
+
+
+//intersection observer
+
+let intersectionObserver = function () {
+    let leftImgs = document.querySelectorAll('.left');
+    let rightImgs = document.querySelectorAll('.right');
+
+    const options = {
+        rootMargin: '0px 0px -200px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if(!entry) {
+                return;
+            }
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, options);
+
+    leftImgs.forEach(img => observer.observe(img));
+    rightImgs.forEach(img => observer.observe(img));
+};
+
+intersectionObserver();
+
+
+let modal = function () {
+
+}

@@ -196,10 +196,6 @@ main {
   min-height: calc(100vh - 127px);
 }
 
-section {
-  width: 100%;
-}
-
 footer {
   background-color: #0169ca;
   height: 89px;
@@ -323,6 +319,30 @@ footer {
   main .about figure,
   main .project article figure {
     width: 290px;
+  }
+
+  main .project article .left {
+    opacity: 0;
+    left: -290px;
+    position: relative;
+    transition: all 0.8s ease;
+  }
+
+  main .project article .left.show {
+    opacity: 1;
+    left: 0;
+  }
+
+  main .project article .right {
+    opacity: 0;
+    right: -290px;
+    position: relative;
+    transition: all 0.8s ease;
+  }
+
+  main .project article .right.show {
+    opacity: 1;
+    right: 0px;
   }
 
   main .project article figure figcaption {
@@ -566,6 +586,50 @@ footer {
     grid-template-areas: "article img";
     justify-content: center;
     align-items: center;
+    width: 608px;
+  }
+
+  main .project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    width: 608px;
+  }
+
+  main .project header {
+    align-self: flex-start;
+  }
+
+  main .project article figure {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+  }
+
+  main .project article figure img {
+    width: 100%;
+  }
+
+  main .project article figure figcaption {
+    width: 304px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  main .project article figure {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   main .home figure,
@@ -586,6 +650,47 @@ footer {
     gap: 8px;
     width: 277px;
     grid-area: article;
+  }
+
+  main .project article {
+    display: grid;
+    grid-template-columns: 227px 227px;
+    gap: 18px;
+    place-items: center;
+    place-content: center;
+    grid-template-areas: "left right";
+  }
+
+  main .project article .left {
+    opacity: 0;
+    left: -290px;
+    position: relative;
+    transition: all 0.8s ease;
+  }
+
+  main .project article .left.show {
+    opacity: 1;
+    left: 0;
+  }
+
+  main .project article .right {
+    opacity: 0;
+    right: -290px;
+    position: relative;
+    transition: all 0.8s ease;
+  }
+
+  main .project article .right.show {
+    opacity: 1;
+    right: 0px;
+  }
+
+  main .project article .left {
+    grid-area: left;
+  }
+
+  main .project article .right {
+    grid-area: right;
   }
 
   main .about article {
@@ -610,22 +715,37 @@ footer {
   main .home article h1,
   main main .home article p,
   main .about article h1,
-  main .about article p {
+  main .about article p,
+  main .project header h1 {
     color: #fff;
   }
 
   main .home article h1,
-  main .about article h1 {
+  main .about article h1,
+  main .project header h1 {
     font-size: 28px;
     font-family: Montserrat;
   }
 
-  main .home article p {
+  main .home article p,
+  main .project article figure figcaption p,
+  main .project article figure figcaption a {
     font-size: 13px;
     font-weight: 500;
     font-family: Roboto;
     line-height: 13px;
     color: #fff;
+  }
+
+  main .project article figure figcaption p {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  main .project article figure figcaption a {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
   }
 
   main .about article p {
@@ -687,6 +807,16 @@ footer {
     width: 840px;
   }
 
+  main .home,
+  main .about,
+  main .project {
+    width: 840px;
+  }
+
+  main .project article {
+    grid-template-columns: 304px 304px;
+  }
+
   .header nav .burger {
     display: none;
   }
@@ -708,13 +838,15 @@ footer {
     opacity: 1;
   }
 
-  .header nav ul li a {
+  .header nav ul li a,
+  main .project figure figcaption a {
     font-size: 14px;
     transition: all ease-in 300ms;
   }
 
-  .header nav ul li a:hover {
-    color: #e31977;
+  .header nav ul li a:hover,
+  main .project figure figcaption a:hover {
+    color: #ff7a2e;
     font-weight: bold;
   }
 
@@ -729,7 +861,8 @@ footer {
   }
 
   main .home article h1,
-  main .about article h1 {
+  main .about article h1,
+  main .project header h1 {
     font-size: 32px;
     font-weight: 900;
     line-height: 26px;
@@ -752,6 +885,6 @@ footer {
 
   footer nav ul li a:hover,
   footer article figure i:hover {
-    color: #e31977;
+    color: #ff7a2e;
   }
 }
