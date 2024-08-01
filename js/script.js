@@ -64,5 +64,10 @@ intersectionObserver();
 
 
 let modal = function () {
+let modalLinks = document.querySelectorAll('.link-modal');
 
+let modal =`<dialog id="my_dialog">
+
+</dialog>`
 }
+modal();
