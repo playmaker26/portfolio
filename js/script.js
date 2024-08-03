@@ -70,15 +70,17 @@ const projects = {
         description: 'Traveler is a beautifully designed website that serves as an inspiration hub for travel enthusiasts. It showcases breathtaking destinations, travel tips, and engaging stories to help you plan your next adventure. The site is built with a focus on visual appeal and user experience, making it easy to navigate and explore various travel ideas.',
         liveDemo: 'https://playmaker26.github.io/Traveler/',
         github: 'https://github.com/playmaker26/Traveler',
-        figma: 'https://www.figma.com/design/0sZRy2wPSbDlHaSbgXMEXQ/Portfolio?node-id=0-1&t=t2TKaTmWS75ZDR0c-1'
+        figma: 'https://www.figma.com/design/0sZRy2wPSbDlHaSbgXMEXQ/Portfolio?node-id=0-1&t=t2TKaTmWS75ZDR0c-1',
+        technologies: ['html5', 'css3', 'js']
     },
-    memoryGame: {
+    memorygame: {
         image: '../project-imge/memory-game.png',
         name: 'Memory Game',
         description: 'The Super Mario Memory Game is a fun and interactive web application designed to test and improve your memory skills. Inspired by the beloved Super Mario series, this game features iconic characters and items from the franchise. Players are challenged to find matching pairs of cards within a grid, with each successful match revealing a piece of the hidden image beneath.',
         liveDemo: 'https://playmaker26.github.io/Memory-Game/',
         github: 'https://github.com/playmaker26/Memory-Game',
-        figma: 'https://www.figma.com/design/0PRMZRgRLvPIUUGS8bjglg/Super-Mario-Memory-Game?node-id=0-1&t=JoWzykj9TPSaOqZw-1'
+        figma: 'https://www.figma.com/design/0PRMZRgRLvPIUUGS8bjglg/Super-Mario-Memory-Game?node-id=0-1&t=JoWzykj9TPSaOqZw-1',
+        technologies: ['html5', 'css3', 'js']
     }
 };
 
@@ -89,27 +91,42 @@ let modalFunction = function () {
         link.addEventListener('click', function(e) {
             e.preventDefault();
 
-            // Determine which project details to use
-            let projectKey = link.parentNode.querySelector('p').textContent.toLowerCase().replace(' ', '');
+            let projectKey = link.getAttribute('data-project').toLowerCase();
             let project = projects[projectKey];
 
-            // Create modal elements
+            if (!project) {
+                console.error('Project not found:', projectKey);
+                return;
+            }
+
             let modal = document.createElement('dialog');
 
+            let technologiesList = project.technologies.map(tech => `
+                <figure>
+                    <i class="fa-brands fa-${tech}"></i>
+                    <figcaption>
+                        <p>${tech.toUpperCase()}</p>
+                    </figcaption>
+                </figure>
+            `).join('');
+
             modal.innerHTML = `
-                <div>
+                <div class= "modal">
                     <button id="close_modal" class="close">Close</button>
-                    <figure>
-                        <img src="${project.image}" alt="${project.name}">
-                        <figcaption>
+                    <figure class= 'modal-img'>
+                         <img src="${project.image}" alt="${project.name}">
+                        <figcaption class= 'project-info'>
                             <header>
                                 <h1>${project.name}</h1>
                             </header>
                             <p>${project.description}</p>
-                            <article>
+                        </figcaption>
+                    </figure>
+                     <article class= 'project-location'>
                                 <header>
                                     <h2>Where to find ${project.name}</h2>
                                 </header>
+                                <div class= 'project-info'>
                                 <figure>
                                     <i class="fa-solid fa-desktop"></i>
                                     <figcaption>
@@ -128,48 +145,29 @@ let modalFunction = function () {
                                         <a href="${project.figma}" target="_blank">Figma</a>
                                     </figcaption>
                                 </figure>
+                                </div>
                             </article>
-                            <article>
+
+                            <article class= 'tech-used'>
                                 <header>
                                     <h3>Technologies used</h3>
                                 </header>
-                                <figure>
-                                    <i class="fa-brands fa-html5"></i>
-                                    <figcaption>
-                                        <p>HTML</p>
-                                    </figcaption>
-                                </figure>
-                                <figure>
-                                    <i class="fa-brands fa-css3-alt"></i>
-                                    <figcaption>
-                                        <p>CSS</p>
-                                    </figcaption>
-                                </figure>
-                                <figure>
-                                    <i class="fa-brands fa-js"></i>
-                                    <figcaption>
-                                        <p>JavaScript</p>
-                                    </figcaption>
-                                </figure>
+                                <div class= 'languages-used'>
+                                ${technologiesList}
+                                </div>
                             </article>
-                        </figcaption>
-                    </figure>
                 </div>
             `;
 
-            // Append modal to body
             document.body.appendChild(modal);
 
-            // Show modal
             modal.showModal();
 
-            // Close modal when the close button is clicked
             document.getElementById('close_modal').addEventListener('click', function() {
                 modal.close();
                 document.body.removeChild(modal);
             });
 
-            // Close modal when clicking outside of it
             modal.addEventListener('click', function(event) {
                 if (event.target === modal) {
                     modal.close();
@@ -181,3 +179,4 @@ let modalFunction = function () {
 };
 
 modalFunction();
+
