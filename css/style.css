@@ -479,7 +479,6 @@ footer {
     color: #fff;
   }
 
-  /* General dialog styles */
   dialog {
     width: 290px;
     display: flex;
@@ -615,10 +614,10 @@ footer {
   /* Close button styles */
   .close {
     align-self: flex-end;
-    background-color: transparent;
+    background-color: #0169ca;
     border: none;
-    font-size: 16px;
-    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
   }
 }
 
