@@ -63,120 +63,142 @@ let intersectionObserver = function () {
 intersectionObserver();
 
 //modal
-const projects = {
+// Define the projects object
+let projects = {
     traveler: {
         image: '../project-imge/traveler.jpeg',
         name: 'Traveler',
         description: 'Traveler is a beautifully designed website that serves as an inspiration hub for travel enthusiasts. It showcases breathtaking destinations, travel tips, and engaging stories to help you plan your next adventure. The site is built with a focus on visual appeal and user experience, making it easy to navigate and explore various travel ideas.',
-        liveDemo: 'https://playmaker26.github.io/Traveler/',
-        github: 'https://github.com/playmaker26/Traveler',
-        figma: 'https://www.figma.com/design/0sZRy2wPSbDlHaSbgXMEXQ/Portfolio?node-id=0-1&t=t2TKaTmWS75ZDR0c-1',
-        technologies: ['html5', 'css3', 'js']
+        headingH3: 'Technologies used',
+        technologies: [
+            { icon: '<i class="fa-brands fa-html5"></i>', title: 'HTML' },
+            { icon: '<i class="fa-brands fa-css3-alt"></i>', title: 'CSS' },
+            { icon: '<i class="fa-brands fa-js"></i>', title: 'JavaScript' }
+        ],
+        headingH2: 'Where to find the project',
+        icons: [
+            {icon: '<i class="fa-solid fa-desktop"></i>', title: 'Live Demo', url: 'https://playmaker26.github.io/Traveler/'},
+            {icon: '<i class="fa-brands fa-github"></i>', title: 'GitHub', url: 'https://github.com/playmaker26/Traveler'},
+            {icon: '<i class="fa-brands fa-figma"></i>', title: 'Figma', url: 'https://www.figma.com/design/pwi3NYzVNWOfdIVilOg1xF/Traveler?node-id=0-1&t=6wwobPewmHA2jZR7-1'}
+        ]
     },
-    memorygame: {
+    memoryGame: {
         image: '../project-imge/memory-game.png',
         name: 'Memory Game',
         description: 'The Super Mario Memory Game is a fun and interactive web application designed to test and improve your memory skills. Inspired by the beloved Super Mario series, this game features iconic characters and items from the franchise. Players are challenged to find matching pairs of cards within a grid, with each successful match revealing a piece of the hidden image beneath.',
-        liveDemo: 'https://playmaker26.github.io/Memory-Game/',
-        github: 'https://github.com/playmaker26/Memory-Game',
-        figma: 'https://www.figma.com/design/0PRMZRgRLvPIUUGS8bjglg/Super-Mario-Memory-Game?node-id=0-1&t=JoWzykj9TPSaOqZw-1',
-        technologies: ['html5', 'css3', 'js']
+        headingH3: 'Technologies used',
+        technologies: [
+            { icon: '<i class="fa-brands fa-html5"></i>', title: 'HTML' },
+            { icon: '<i class="fa-brands fa-css3-alt"></i>', title: 'CSS' },
+            { icon: '<i class="fa-brands fa-js"></i>', title: 'JavaScript' }
+        ],
+        headingH2: 'Where to find the project',
+        icons: [
+            {icon: '<i class="fa-solid fa-desktop"></i>', title: 'Live Demo', url: 'https://playmaker26.github.io/Memory-Game/'},
+            {icon: '<i class="fa-brands fa-github"></i>', title: 'GitHub', url: 'https://github.com/playmaker26/Memory-Game'},
+            {icon: '<i class="fa-brands fa-figma"></i>', title: 'Figma', url: 'https://www.figma.com/design/0PRMZRgRLvPIUUGS8bjglg/Super-Mario-Memory-Game?node-id=0-1&t=19JarZvH9PtJP5M1-1'}
+        ]
     }
 };
 
-let modalFunction = function () {
-    let modalLinks = document.querySelectorAll('.link-modal');
-
-    modalLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            let projectKey = link.getAttribute('data-project').toLowerCase();
-            let project = projects[projectKey];
-
-            if (!project) {
-                console.error('Project not found:', projectKey);
-                return;
-            }
-
-            let modal = document.createElement('dialog');
-
-            let technologiesList = project.technologies.map(tech => `
-                <figure>
-                    <i class="fa-brands fa-${tech}"></i>
+// Function to create and display the modal
+function createModal(project) {
+    let modalContent = `
+    <section class="modal-content">
+        <button class='close'>Close</button>
+        <figure class="project-img">
+            <img src="${project.image}" alt="${project.name}">
+            <figcaption>
+                <header>
+                    <h1>${project.name}</h1>
+                </header>
+                <p>${project.description}</p>
+            </figcaption>
+        </figure>
+        <article class="project-info">
+            <header>
+                <h2>${project.headingH2}</h2>
+            </header>
+            <div>
+            ${project.icons.map(icon => `
+                <figure class="project-icon">
+                    ${icon.icon}
                     <figcaption>
-                        <p>${tech.toUpperCase()}</p>
+                        <a href='${icon.url}' target='_blank'>${icon.title}</a>
                     </figcaption>
                 </figure>
-            `).join('');
+            `).join('')}
+            </div>
+        </article>
+        <article class='tech-used'>
+            <header>
+                <h3>${project.headingH3}</h3>
+            </header>
+            <div>
+            ${project.technologies.map(tech => `
+                <figure class="tech-icon">
+                    ${tech.icon}
+                    <figcaption>
+                        <p>${tech.title}</p>
+                    </figcaption>
+                </figure>
+            `).join('')}
+            </div>
+        </article>
+    </section>
+    `;
+    return modalContent;
+}
 
-            modal.innerHTML = `
-                <div class= "modal">
-                    <button id="close_modal" class="close">Close</button>
-                    <figure class= 'modal-img'>
-                         <img src="${project.image}" alt="${project.name}">
-                        <figcaption class= 'project-info'>
-                            <header>
-                                <h1>${project.name}</h1>
-                            </header>
-                            <p>${project.description}</p>
-                        </figcaption>
-                    </figure>
-                     <article class= 'project-location'>
-                                <header>
-                                    <h2>Where to find ${project.name}</h2>
-                                </header>
-                                <div class= 'project-info'>
-                                <figure>
-                                    <i class="fa-solid fa-desktop"></i>
-                                    <figcaption>
-                                        <a href="${project.liveDemo}" target="_blank">Live Demo</a>
-                                    </figcaption>
-                                </figure>
-                                <figure>
-                                    <i class="fa-brands fa-github"></i>
-                                    <figcaption>
-                                        <a href="${project.github}" target="_blank">GitHub</a>
-                                    </figcaption>
-                                </figure>
-                                <figure>
-                                    <i class="fa-brands fa-figma"></i>
-                                    <figcaption>
-                                        <a href="${project.figma}" target="_blank">Figma</a>
-                                    </figcaption>
-                                </figure>
-                                </div>
-                            </article>
+// Event listener to open the modal
+let modalLinks = document.querySelectorAll('.link-modal');
+modalLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+        let projectKey = link.dataset.project;
+        let project = projects[projectKey];
 
-                            <article class= 'tech-used'>
-                                <header>
-                                    <h3>Technologies used</h3>
-                                </header>
-                                <div class= 'languages-used'>
-                                ${technologiesList}
-                                </div>
-                            </article>
-                </div>
-            `;
+        if (!project) {
+            console.error(`Project not found: ${projectKey}`);
+            return;
+        }
 
-            document.body.appendChild(modal);
+        let overlay = document.createElement('div');
+        overlay.id = 'modal-overlay';
+        overlay.style.position = 'fixed';
+        overlay.style.top = '0';
+        overlay.style.left = '0';
+        overlay.style.width = '100%';
+        overlay.style.height = '100%';
+        overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.45)';
+        overlay.style.zIndex = '1000';
 
-            modal.showModal();
+        let modal = document.createElement('dialog');
+        modal.id = 'modal';
+        modal.style.position = 'relative';
+        modal.style.zIndex = '1001';
+        modal.innerHTML = createModal(project);
+        document.body.appendChild(overlay);
+        document.body.appendChild(modal);
 
-            document.getElementById('close_modal').addEventListener('click', function() {
-                modal.close();
-                document.body.removeChild(modal);
-            });
+        modal.showModal();
 
-            modal.addEventListener('click', function(event) {
-                if (event.target === modal) {
-                    modal.close();
-                    document.body.removeChild(modal);
-                }
-            });
+        document.querySelector('.close').addEventListener('click', () => {
+            modal.close();
+            document.body.removeChild(modal);
+            document.body.removeChild(overlay);
+        });
+
+        overlay.addEventListener('click', () => {
+            modal.close();
+            document.body.removeChild(modal);
+            document.body.removeChild(overlay);
         });
     });
-};
+});
 
-modalFunction();
+  
+    
+  
+  
 

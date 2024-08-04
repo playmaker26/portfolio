@@ -479,108 +479,101 @@ footer {
     color: #fff;
   }
 
-  dialog {
+  #modal {
     width: 290px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     background-color: #ffdd45;
+  }
+
+  #modal .modal-content,
+  #modal .modal-content article {
+    display: flex;
+    flex-direction: column;
     gap: 20px;
-    padding: 20px;
-    box-sizing: border-box;
+    width: 100%;
+  }
+
+  #modal .modal-content .close {
+    width: 66px;
     border: none;
-    border-radius: 10px;
-    overflow-y: auto; /* Allow vertical scrolling if needed */
+    background-color: #0169ca;
+    color: #fff;
+    font-weight: bold;
+    align-self: flex-end;
+    font-family: Roboto;
+    font-size: 18px;
+    padding: 10px;
+    appearance: none;
   }
 
-  /* Modal content */
-  .modal {
+  #modal .modal-content .project-img {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
     gap: 20px;
+  }
+
+  #modal .modal-content .project-img img {
     width: 100%;
   }
 
-  .modal-img {
-    width: 100%;
+  #modal .modal-content .project-img figcaption,
+  #modal .modal-content .project-img figcaption header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-  }
-
-  .modal-img img {
     width: 100%;
-    height: auto;
-    object-fit: cover; /* Ensure the image covers the area without stretching */
   }
 
-  .project-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+  #modal .modal-content .project-img figcaption header {
+    flex-direction: row;
+    margin-bottom: 20px;
   }
 
-  .project-info header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .project-info header h1 {
-    color: #000;
+  #modal .modal-content .project-img figcaption header h1 {
     font-size: 28px;
-    font-weight: 900;
     font-family: Montserrat;
+    font-weight: 900;
   }
 
-  .project-info p {
+  #modal .modal-content .project-img figcaption p {
+    font-family: Roboto;
     font-size: 12px;
     line-height: 18px;
-    color: #000;
-    font-family: Roboto;
-    text-align: center; /* Center text for better readability */
   }
 
-  .project-location,
-  .tech-used {
+  #modal .modal-content .project-info header,
+  #modal .modal-content .tech-used header {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-  }
-
-  .project-location header,
-  .tech-used header {
-    display: flex;
-    align-self: flex-start;
     width: 100%;
   }
-
-  .project-location header h2,
-  .tech-used header h3 {
-    font-weight: 600;
+  #modal .modal-content .project-info header h2,
+  #modal .modal-content .tech-used header h3 {
+    align-self: flex-start;
+    font-size: 18px;
     font-family: Montserrat;
+    font-weight: 600;
   }
 
-  .project-location .project-info,
-  .tech-used .languages-used {
+  #modal .modal-content .tech-used header h3 {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  #modal .modal-content article div {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    width: 100%;
     gap: 20px;
-    flex-wrap: wrap; /* Allow items to wrap to the next line */
   }
 
-  .project-location .project-info figure,
-  .tech-used .languages-used figure {
+  #modal .modal-content article div figure {
+    width: 100%px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -588,36 +581,30 @@ footer {
     gap: 10px;
   }
 
-  .project-location .project-info figure i,
-  .tech-used .languages-used figure i {
-    font-size: 25px;
+  #modal .modal-content article div figure i {
     color: #000;
   }
 
-  .project-location .project-info figure figcaption,
-  .tech-used .languages-used figure figcaption {
+  #modal .modal-content article div figure figcaption {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
 
-  .project-location .project-info figure figcaption a,
-  .tech-used .languages-used figure figcaption p {
-    font-size: 12px;
+  #modal .modal-content article div figure figcaption a {
     text-decoration: none;
-    font-family: Roboto;
+    font-size: 12px;
     font-weight: 500;
+    font-family: Roboto;
     color: #000;
-    text-align: center; /* Center text for better readability */
   }
 
-  /* Close button styles */
-  .close {
-    align-self: flex-end;
-    background-color: #0169ca;
-    border: none;
-    font-size: 18px;
-    font-weight: bold;
+  #modal .modal-content article div figure figcaption p {
+    font-size: 12px;
+    font-weight: 500;
+    font-family: Roboto;
+    color: #000;
   }
 }
 
@@ -943,6 +930,138 @@ footer {
     width: 25px;
     color: #fff;
   }
+
+  #modal {
+    width: 768px;
+    background-color: #ffdd45;
+  }
+
+  #modal .modal-content,
+  #modal .modal-content article {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  #modal .modal-content .close {
+    width: 66px;
+    border: none;
+    background-color: #0169ca;
+    color: #fff;
+    font-weight: bold;
+    align-self: flex-end;
+    font-family: Roboto;
+    font-size: 18px;
+    padding: 10px;
+    appearance: none;
+  }
+
+  #modal .modal-content .project-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+  }
+
+  #modal .modal-content .project-img img {
+    width: 100%;
+  }
+
+  #modal .modal-content .project-img figcaption,
+  #modal .modal-content .project-img figcaption header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  #modal .modal-content .project-img figcaption header {
+    flex-direction: row;
+    margin-bottom: 20px;
+  }
+
+  #modal .modal-content .project-img figcaption header h1 {
+    font-size: 28px;
+    font-family: Montserrat;
+    font-weight: 900;
+  }
+
+  #modal .modal-content .project-img figcaption p {
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  #modal .modal-content .project-info header,
+  #modal .modal-content .tech-used header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  #modal .modal-content .project-info header h2,
+  #modal .modal-content .tech-used header h3 {
+    align-self: flex-start;
+    font-size: 18px;
+    font-family: Montserrat;
+    font-weight: 600;
+  }
+
+  #modal .modal-content .project-info header h2 {
+    font-size: 20px;
+  }
+
+  #modal .modal-content .tech-used header h3 {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  #modal .modal-content article div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+  }
+
+  #modal .modal-content article div figure {
+    width: 100%px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  #modal .modal-content article div figure i {
+    color: #000;
+  }
+
+  #modal .modal-content article div figure figcaption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  #modal .modal-content article div figure figcaption a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Roboto;
+    color: #000;
+  }
+
+  #modal .modal-content article div figure figcaption p {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Roboto;
+    color: #000;
+  }
 }
 
 @media only screen and (min-width: 1000px) {
@@ -1027,7 +1146,38 @@ footer {
   }
 
   footer nav ul li a:hover,
-  footer article figure i:hover {
+  footer article figure i:hover,
+  #modal .modal-content article div figure figcaption a:hover {
     color: #ff7a2e;
+  }
+
+  #modal {
+    width: 1000px;
+  }
+
+  #modal .modal-content .project-img figcaption header h1 {
+    font-size: 32px;
+  }
+
+  #modal .modal-content .project-info header h2 {
+    font-size: 22px;
+  }
+
+  #modal .modal-content .tech-used header h3 {
+    font-size: 20px;
+  }
+
+  #modal .modal-content article div figure figcaption a {
+    font-size: 16px;
+    transition: all ease-in 0.6s;
+  }
+
+  #modal .modal-content article div figure figcaption a:hover {
+    color: #0169ca;
+    font-weight: bold;
+  }
+
+  #modal .modal-content .close {
+    cursor: pointer;
   }
 }
