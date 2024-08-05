@@ -36,31 +36,31 @@ activeLink();
 
 //intersection observer
 
-let intersectionObserver = function () {
-    let leftImgs = document.querySelectorAll('.left');
-    let rightImgs = document.querySelectorAll('.right');
-
+function intersectionObserver() {
+    let figures = document.querySelectorAll('figure');
+    
     const options = {
-        rootMargin: '0px 0px -200px 0px'
+        rootMargin: '0px 0px -100px 0px' // Adjust this if necessary
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-            if(!entry) {
-                return;
-            }
             if (entry.isIntersecting) {
+                console.log(entry.target); // Debug: Log each observed entry
                 entry.target.classList.add('show');
                 observer.unobserve(entry.target);
             }
         });
     }, options);
 
-    leftImgs.forEach(img => observer.observe(img));
-    rightImgs.forEach(img => observer.observe(img));
-};
+    figures.forEach(figure => {
+        observer.observe(figure);
+    });
+}
 
-intersectionObserver();
+document.addEventListener('DOMContentLoaded', intersectionObserver);
+
+
 
 //modal
 // Define the projects object

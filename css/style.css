@@ -185,11 +185,9 @@ body {
   background-color: #0169ca;
 }
 .wrapper {
-  position: relative;
+  margin: 0 auto;
   min-height: 100vh;
   width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
 }
 
 main {
@@ -275,6 +273,7 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    right: 50px;
     width: 233px;
     justify-content: center;
     align-items: center;
@@ -302,7 +301,8 @@ footer {
 
   main .home,
   main .about,
-  main .project {
+  main .project,
+  main .skills {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -311,36 +311,46 @@ footer {
     width: 290px;
   }
 
-  main .project header {
+  main .skills {
+    gap: 20px;
+  }
+
+  main .project header,
+  main .skills header {
     align-self: flex-start;
   }
 
   header main .home figure,
   main .about figure,
-  main .project article figure {
+  main .project article figure,
+  main .skills article figure {
     width: 290px;
   }
 
-  main .project article .left {
+  main .project article .left,
+  main .skills article .left {
     opacity: 0;
     left: -290px;
     position: relative;
     transition: all 0.8s ease;
   }
 
-  main .project article .left.show {
+  main .project article .left.show,
+  main .skills article .left.show {
     opacity: 1;
     left: 0;
   }
 
-  main .project article .right {
+  main .project article .right,
+  main .skills article .right {
     opacity: 0;
     right: -290px;
     position: relative;
     transition: all 0.8s ease;
   }
 
-  main .project article .right.show {
+  main .project article .right.show,
+  main .skills article .right.show {
     opacity: 1;
     right: 0px;
   }
@@ -376,12 +386,45 @@ footer {
 
   main .home article,
   main .about article,
-  main .project article {
+  main .project article,
+  main .skills article {
     display: flex;
     flex-direction: column;
     gap: 8px;
     width: 290px;
     margin: 0 auto;
+  }
+
+  main .skills article {
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main .skills article figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  main .skills article figure i {
+    font-size: 50px;
+    color: #fff;
+  }
+
+  main .skills article figure figcaption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main .skills article figure figcaption p {
+    font-size: 12px;
+    font-family: Roboto;
+    font-weight: bold;
+    color: #fff;
   }
 
   main .project article {
@@ -408,13 +451,15 @@ footer {
   main .home article p,
   main .about article h1,
   main .about p,
-  main .project header h1 {
+  main .project header h1,
+  main .skills header h1 {
     color: #fff;
   }
 
   main .home article h1,
   main .about article h1,
-  main .project header h1 {
+  main .project header h1,
+  main .skills header h1 {
     font-size: 24px;
     font-family: Montserrat;
   }
@@ -582,6 +627,7 @@ footer {
   }
 
   #modal .modal-content article div figure i {
+    font-size: 25px;
     color: #000;
   }
 
@@ -611,7 +657,6 @@ footer {
 @media only screen and (min-width: 768px) {
   .wrapper {
     width: 608px;
-    margin: auto;
   }
 
   .header {
@@ -683,6 +728,7 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    right: 90px;
     width: 233px;
     justify-content: center;
     align-items: center;
@@ -717,7 +763,8 @@ footer {
     width: 608px;
   }
 
-  main .project {
+  main .project,
+  main .skills {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -726,7 +773,12 @@ footer {
     width: 608px;
   }
 
-  main .project header {
+  main .skills {
+    gap: 20px;
+  }
+
+  main .project header,
+  .skills header {
     align-self: flex-start;
   }
 
@@ -782,6 +834,21 @@ footer {
     grid-area: article;
   }
 
+  main .skills article {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .skills article .left {
+    grid-area: left;
+  }
+
+  .skills article .right {
+    grid-area: right;
+  }
+
   main .project article {
     display: grid;
     grid-template-columns: 227px 227px;
@@ -791,26 +858,30 @@ footer {
     grid-template-areas: "left right";
   }
 
-  main .project article .left {
+  main .project article .left,
+  main .skills article .left {
     opacity: 0;
     left: -290px;
     position: relative;
     transition: all 0.8s ease;
   }
 
-  main .project article .left.show {
+  main .project article .left.show,
+  main .skills article .left.show {
     opacity: 1;
     left: 0;
   }
 
-  main .project article .right {
+  main .project article .right,
+  main .skills article .right {
     opacity: 0;
     right: -290px;
     position: relative;
     transition: all 0.8s ease;
   }
 
-  main .project article .right.show {
+  main .project article .right.show,
+  main .skills article .right.show {
     opacity: 1;
     right: 0px;
   }
@@ -846,15 +917,43 @@ footer {
   main main .home article p,
   main .about article h1,
   main .about article p,
-  main .project header h1 {
+  main .project header h1,
+  main .skills header h1 {
     color: #fff;
   }
 
   main .home article h1,
   main .about article h1,
-  main .project header h1 {
+  main .project header h1,
+  main .skills header h1 {
     font-size: 28px;
     font-family: Montserrat;
+  }
+
+  main .skills article figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  main .skills article figure i {
+    font-size: 25px;
+    color: #fff;
+  }
+
+  main .skills article figure figcaption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main .skills article figure figcaption p {
+    font-size: 12px;
+    font-family: Roboto;
+    font-weight: bold;
+    color: #fff;
   }
 
   main .home article p,
@@ -1038,6 +1137,7 @@ footer {
   }
 
   #modal .modal-content article div figure i {
+    font-size: 25px;
     color: #000;
   }
 
