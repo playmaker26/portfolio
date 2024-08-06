@@ -527,6 +527,11 @@ footer {
   #modal {
     width: 290px;
     background-color: #ffdd45;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 
   #modal .modal-content,
@@ -763,22 +768,29 @@ footer {
     width: 608px;
   }
 
-  main .project,
-  main .skills {
+  main .project {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 18px;
-    width: 608px;
+    width: 100%;
   }
 
   main .skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     gap: 20px;
+    width: 100%;
   }
 
   main .project header,
-  .skills header {
+  main .skills header {
+    align-self: flex-start;
+  }
+
+  main .skills header h1 {
     align-self: flex-start;
   }
 
@@ -836,9 +848,12 @@ footer {
 
   main .skills article {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
+    flex-direction: row;
     gap: 20px;
+    width: 100%;
+    flex-wrap: wrap;
   }
 
   .skills article .left {
@@ -939,7 +954,7 @@ footer {
   }
 
   main .skills article figure i {
-    font-size: 25px;
+    font-size: 30px;
     color: #fff;
   }
 
@@ -1033,6 +1048,11 @@ footer {
   #modal {
     width: 768px;
     background-color: #ffdd45;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 
   #modal .modal-content,
