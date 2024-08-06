@@ -527,11 +527,10 @@ footer {
   #modal {
     width: 290px;
     background-color: #ffdd45;
-    position: relative;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    position: absolute; /* Changed from relative to absolute */
+    top: 90%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
   }
 
   #modal .modal-content,
@@ -1048,11 +1047,10 @@ footer {
   #modal {
     width: 768px;
     background-color: #ffdd45;
-    position: relative;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    position: absolute; /* Changed from relative to absolute */
+    top: 90%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
   }
 
   #modal .modal-content,
