@@ -302,7 +302,8 @@ footer {
   main .home,
   main .about,
   main .project,
-  main .skills {
+  main .skills,
+  main .contact {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -311,13 +312,17 @@ footer {
     width: 290px;
   }
 
-  main .skills {
+  main .skills,
+  main .contact {
+    align-items: flex-start;
     gap: 20px;
   }
 
   main .project header,
-  main .skills header {
+  main .skills header,
+  main .contact header {
     align-self: flex-start;
+    width: 100%;
   }
 
   header main .home figure,
@@ -452,14 +457,16 @@ footer {
   main .about article h1,
   main .about p,
   main .project header h1,
-  main .skills header h1 {
+  main .skills header h1,
+  main .contact header h1 {
     color: #fff;
   }
 
   main .home article h1,
   main .about article h1,
   main .project header h1,
-  main .skills header h1 {
+  main .skills header h1,
+  main .contact header h1 {
     font-size: 24px;
     font-family: Montserrat;
   }
@@ -656,6 +663,43 @@ footer {
     font-family: Roboto;
     color: #000;
   }
+
+  main .contact form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  main .contact form button {
+    background-color: #ffdd45;
+    padding: 5px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 16px;
+    font-family: Montserrat;
+    border: none;
+  }
+
+  main .contact form div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  main .contact form div label {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Montserrat;
+    color: #fff;
+  }
+
+  main .contact form div textarea {
+    height: 143px;
+    resize: none;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -785,12 +829,11 @@ footer {
   }
 
   main .project header,
-  main .skills header {
+  main .skills header,
+  main .contact header {
     align-self: flex-start;
-  }
-
-  main .skills header h1 {
-    align-self: flex-start;
+    width: 100%;
+    margin-bottom: 20px;
   }
 
   main .project article figure {
@@ -932,14 +975,16 @@ footer {
   main .about article h1,
   main .about article p,
   main .project header h1,
-  main .skills header h1 {
+  main .skills header h1,
+  main .contact header h1 {
     color: #fff;
   }
 
   main .home article h1,
   main .about article h1,
   main .project header h1,
-  main .skills header h1 {
+  main .skills header h1,
+  main .contact header h1 {
     font-size: 28px;
     font-family: Montserrat;
   }
@@ -1180,6 +1225,61 @@ footer {
     font-family: Roboto;
     color: #000;
   }
+
+  main .contact form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-areas: "name email" "message message" "button button";
+    gap: 20px;
+    justify-content: center;
+  }
+
+  main .contact form button {
+    background-color: #ffdd45;
+    padding: 5px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 16px;
+    font-family: Montserrat;
+    border: none;
+  }
+
+  main .contact form div {
+    display: flex;
+    flex-direction: column;
+    width: 290px;
+    gap: 10px;
+  }
+
+  main .contact form div label {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Montserrat;
+    color: #fff;
+  }
+
+  main .contact form div textarea {
+    height: 143px;
+    resize: none;
+  }
+
+  main .contact form .name {
+    grid-area: name;
+  }
+
+  main .contact form .email {
+    grid-area: email;
+  }
+
+  main .contact form .message {
+    grid-area: message;
+    width: 100%;
+  }
+
+  main .contact form button {
+    grid-area: button;
+  }
 }
 
 @media only screen and (min-width: 1000px) {
@@ -1189,8 +1289,10 @@ footer {
 
   main .home,
   main .about,
-  main .project {
-    width: 840px;
+  main .project,
+  main .skills,
+  main .contact {
+    width: 100%;
   }
 
   main .project article {
@@ -1242,19 +1344,32 @@ footer {
 
   main .home article h1,
   main .about article h1,
-  main .project header h1 {
+  main .project header h1,
+  main .skills header h1,
+  main .contact header h1 {
     font-size: 32px;
     font-weight: 900;
     line-height: 26px;
+    align-self: flex-start;
+  }
+
+  main .skills header {
+    margin-bottom: 20px;
+  }
+
+  main .skills figure i {
+    font-size: 28px;
   }
 
   main .home article a,
   footer nav ul li a,
-  footer article figure i {
+  footer article figure i,
+  main .contact form button {
     transition: all ease-in 300ms;
   }
 
-  main .home article a:hover {
+  main .home article a:hover,
+  main .contact form button:hover {
     border: 1px solid #e31977;
   }
 
@@ -1295,7 +1410,8 @@ footer {
     font-weight: bold;
   }
 
-  #modal .modal-content .close {
+  #modal .modal-content .close,
+  main .contact form button {
     cursor: pointer;
   }
 }
