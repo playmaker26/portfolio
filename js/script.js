@@ -98,6 +98,24 @@ let projects = {
             {icon: '<i class="fa-brands fa-github"></i>', title: 'GitHub', url: 'https://github.com/playmaker26/Memory-Game'},
             {icon: '<i class="fa-brands fa-figma"></i>', title: 'Figma', url: 'https://www.figma.com/design/0PRMZRgRLvPIUUGS8bjglg/Super-Mario-Memory-Game?node-id=0-1&t=19JarZvH9PtJP5M1-1'}
         ]
+    },
+
+    gamer: {
+        image: '../project-imge/100%-gamer.jpg',
+        name: '100% Gamer',
+        description: 'The "100% Gamer" landing page is a single-page responsive website designed to help gamers conquer the most challenging levels and achieve 100% completion in their favorite games. The site serves as a hub for guides, tips, and walkthroughs, providing gamers with the tools they need to master their gaming experience.',
+        headingH3: 'Technologies used',
+        technologies: [
+            { icon: '<i class="fa-brands fa-html5"></i>', title: 'HTML' },
+            { icon: '<i class="fa-brands fa-css3-alt"></i>', title: 'CSS' },
+            { icon: '<i class="fa-brands fa-js"></i>', title: 'JavaScript' }
+        ],
+        headingH2: 'Where to find the project',
+        icons: [
+            {icon: '<i class="fa-solid fa-desktop"></i>', title: 'Live Demo', url: 'https://playmaker26.github.io/100-gamer/'},
+            {icon: '<i class="fa-brands fa-github"></i>', title: 'GitHub', url: 'https://github.com/playmaker26/100-gamer'},
+            {icon: '<i class="fa-brands fa-figma"></i>', title: 'Figma', url: 'https://www.figma.com/design/7JXc2jRRsBPPqbkagUd0x7/100%25-gamer?node-id=1-2&t=oFGk06OvW4NXiMcg-1'}
+        ]
     }
 };
 

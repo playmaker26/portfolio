@@ -912,7 +912,9 @@ footer {
     gap: 18px;
     place-items: center;
     place-content: center;
-    grid-template-areas: "left right";
+    grid-template-areas:
+      "left right"
+      "gamer.";
   }
 
   main .project article .left,
@@ -949,6 +951,10 @@ footer {
 
   main .project article .right {
     grid-area: right;
+  }
+
+  main .project article .gamer {
+    grid-area: gamer;
   }
 
   main .about article {
