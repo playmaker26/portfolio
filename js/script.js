@@ -101,7 +101,7 @@ let projects = {
     },
 
     gamer: {
-        image: '../project-imge/100%-gamer.jpg',
+        image: '../project-imge/gamer.jpg',
         name: '100% Gamer',
         description: 'The "100% Gamer" landing page is a single-page responsive website designed to help gamers conquer the most challenging levels and achieve 100% completion in their favorite games. The site serves as a hub for guides, tips, and walkthroughs, providing gamers with the tools they need to master their gaming experience.',
         headingH3: 'Technologies used',
