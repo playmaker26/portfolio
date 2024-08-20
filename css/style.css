@@ -914,7 +914,7 @@ footer {
     place-content: center;
     grid-template-areas:
       "left right"
-      "gamer.";
+      "gamer taskly";
   }
 
   main .project article .left,
@@ -955,6 +955,10 @@ footer {
 
   main .project article .gamer {
     grid-area: gamer;
+  }
+
+  main .project article .taskly {
+    grid-area: taskly;
   }
 
   main .about article {

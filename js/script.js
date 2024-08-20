@@ -115,7 +115,25 @@ let projects = {
             {icon: '<i class="fa-solid fa-desktop"></i>', title: 'Live Demo', url: 'https://playmaker26.github.io/100-gamer/'},
             {icon: '<i class="fa-brands fa-github"></i>', title: 'GitHub', url: 'https://github.com/playmaker26/100-gamer'},
             {icon: '<i class="fa-brands fa-figma"></i>', title: 'Figma', url: 'https://www.figma.com/design/7JXc2jRRsBPPqbkagUd0x7/100%25-gamer?node-id=1-2&t=oFGk06OvW4NXiMcg-1'}
-        ]
+        ],
+    },
+
+    taskly: {
+        image: '../project-imge/taskly.png',
+        name: 'Taskly',
+        description: 'Taskly is a dynamic and user-friendly to-do list application designed to streamline task management. Developed with HTML, CSS, and JavaScript, Taskly features a clean and responsive interface that allows users to efficiently manage their daily tasks. The app includes CRUD (Create, Read, Update, Delete) functionality, enabling users to add, edit, and remove tasks with ease.',
+        headingH3: 'Technologies used',
+        technologies: [
+            { icon: '<i class="fa-brands fa-html5"></i>', title: 'HTML' },
+            { icon: '<i class="fa-brands fa-css3-alt"></i>', title: 'CSS' },
+            { icon: '<i class="fa-brands fa-js"></i>', title: 'JavaScript' }
+        ], 
+        headingH2: 'Where to find the project',
+        icons: [
+            {icon: '<i class="fa-solid fa-desktop"></i>', title: 'Live Demo', url: 'https://playmaker26.github.io/Taskly/'},
+            {icon: '<i class="fa-brands fa-github"></i>', title: 'GitHub', url: 'https://github.com/playmaker26/Taskly'},
+            {icon: '<i class="fa-brands fa-figma"></i>', title: 'Figma', url: 'https://www.figma.com/design/sfYQ5dgmr2EJlKHXT9crwE/Taskly?node-id=0-1&t=6HhGwwgiHvHHmRRF-1'}
+        ],
     }
 };
 
