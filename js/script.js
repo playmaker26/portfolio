@@ -134,6 +134,23 @@ let projects = {
             {icon: '<i class="fa-brands fa-github"></i>', title: 'GitHub', url: 'https://github.com/playmaker26/Taskly'},
             {icon: '<i class="fa-brands fa-figma"></i>', title: 'Figma', url: 'https://www.figma.com/design/sfYQ5dgmr2EJlKHXT9crwE/Taskly?node-id=0-1&t=6HhGwwgiHvHHmRRF-1'}
         ],
+    },
+    canvasCraft: {
+        image: '../project-imge/canvas-craft.png',
+        name: 'CanvasCraft',
+        description: 'Developed an interactive canvas drawing application that allows users to create, edit, and manage their drawings with various tools and features. The app provides a dynamic and user-friendly interface, enabling users to draw, erase, zoom in and out, undo and redo actions, and clear the canvas.',
+        headingH3: 'Technologies used',
+        technologies: [
+            { icon: '<i class="fa-brands fa-html5"></i>', title: 'HTML' },
+            { icon: '<i class="fa-brands fa-css3-alt"></i>', title: 'CSS' },
+            { icon: '<i class="fa-brands fa-js"></i>', title: 'JavaScript' }
+        ], 
+        headingH2: 'Where to find the project',
+        icons: [
+            {icon: '<i class="fa-solid fa-desktop"></i>', title: 'Live Demo', url: 'https://playmaker26.github.io/canvascraft/'},
+            {icon: '<i class="fa-brands fa-github"></i>', title: 'GitHub', url: 'https://github.com/playmaker26/canvascraft'},
+            {icon: '<i class="fa-brands fa-figma"></i>', title: 'Figma', url: 'https://www.figma.com/design/adqsMqVi55q8uAUuRjT6rd/CanvasCraft?node-id=0-1&t=sJlF0zIRjEtqd12i-1'}
+        ],
     }
 };
 

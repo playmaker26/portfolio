@@ -914,7 +914,8 @@ footer {
     place-content: center;
     grid-template-areas:
       "left right"
-      "gamer taskly";
+      "gamer taskly"
+      "canvascraft . ";
   }
 
   main .project article .left,
@@ -959,6 +960,10 @@ footer {
 
   main .project article .taskly {
     grid-area: taskly;
+  }
+
+  main .project article .canvas-craft {
+    grid-area: canvascraft;
   }
 
   main .about article {
