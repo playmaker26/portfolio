@@ -177,71 +177,112 @@ select {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #1b263b;
+}
+
+section {
+  min-height: 100vh;
 }
 
 @media only screen and (max-width: 767px) {
   .container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     margin: auto;
     width: 100%;
     max-width: 343px;
     min-height: 100vh;
   }
 
-  .index-header {
+  .main-header {
+    height: 41px;
+    background-color: #1b263b;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    height: 41px;
   }
 
-  .index-header div {
+  .main-header div {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .index-header div a {
-    font-family: Roboto;
+  .main-header div a {
     font-size: 18px;
     font-weight: 500;
+    font-family: Roboto;
     color: #fff;
     text-decoration: none;
   }
 
-  .index-header nav {
+  .main-header nav {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .index-header nav ul {
-    position: absolute;
-    top: 41px;
+  .main-header nav button {
+    position: relative;
+    display: block;
+    width: 18px;
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+  }
+
+  .main-header nav button .bar,
+  .main-header nav button::after,
+  .main-header nav button::before {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 2px;
+    background-color: #fff;
+    margin: 4px 0px;
+    transition: 0.4s;
+  }
+
+  .main-header nav button.active::before {
+    transform: rotate(-45deg) translate(-4px, 4px);
+  }
+
+  .main-header nav button.active .bar {
+    opacity: 0;
+  }
+
+  .main-header nav button.active::after {
+    transform: rotate(45deg) translate(-4px, -4px);
+  }
+
+  .main-header nav ul {
     background-color: #1b263b;
-    width: 270px;
-    right: 0;
+    width: 268px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 19px;
+    position: absolute;
+    top: 41px;
+    right: 0;
     z-index: 1;
     transition: all ease-in 300ms;
     opacity: 0;
   }
 
-  .index-header nav ul li a {
+  .main-header nav ul li a {
     font-size: 16px;
-    font-family: Roboto;
-    text-align: center;
-    text-decoration: none;
+    font-weight: normal;
     color: #fff;
+    font-family: Roboto;
+    text-decoration: none;
   }
 
   main {
@@ -252,42 +293,46 @@ body {
     align-items: center;
   }
 
-  main #home {
+  main #home,
+  main #about,
+  main #skills,
+  main #projects {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 12px;
-    width: 100%;
   }
 
   main #home article {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     gap: 17px;
+    opacity: 0;
+    animation: appear 300ms ease-in forwards;
   }
 
   main #home article h1 {
-    font-size: 24px;
-    font-weight: bold;
-    font-family: Poppins;
-    color: #fff;
     padding: 10px;
-    line-height: 30px;
+    font-size: 24px;
+    font-family: Poppins;
+    font-weight: bold;
+    color: #fff;
+    line-height: 34px;
   }
 
   main #home article a {
+    padding: 10px;
     text-align: center;
     background-color: #ffdf22;
+    width: 122px;
     font-size: 16px;
-    padding: 10px;
-    color: #1b263b;
-    font-family: Roboto;
-    width: 128px;
-    font-weight: 600;
     text-decoration: none;
+    color: #1b263b;
+    font-weight: 500;
+    font-family: Roboto;
   }
 
   main #home figure,
@@ -295,50 +340,156 @@ body {
     width: 100%;
   }
 
-  footer {
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  main #about figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 38px;
+    width: 100%;
+  }
+
+  main #about figure img {
+    width: 263px;
+    border-radius: 50%;
+  }
+
+  main #about figure figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  main #about figure figcaption header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+
+  main #about figure figcaption header h2,
+  main #skills header h2,
+  main #projects header h2 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Poppins;
+  }
+
+  main #about figure figcaption p {
+    color: #fff;
+    line-height: 22px;
+    font-size: 14px;
+    font-family: Roboto;
+    padding: 10px;
+  }
+
+  main #skills header,
+  main #projects header {
+    width: 100%;
+    display: flex;
+  }
+
+  main #skills article {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 19px;
+    width: 100%;
+  }
+
+  main #skills article figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  main #skills article figure svg {
+    width: 70px;
+  }
+
+  main #skills article figure .html {
+    fill: #e34c26;
+  }
+
+  main #skills article figure .css {
+    fill: #264de4;
+  }
+
+  main #skills article figure .js {
+    fill: #f0db4f;
+  }
+
+  main #skills article figure figcaption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main #skills article figure figcaption p {
+    font-family: Roboto;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 500;
+  }
+
+  main #projects article {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 73px;
-    gap: 19px;
+    gap: 24px;
   }
 
-  footer article {
+  main #projects article figure,
+  main #projects img,
+  main #projects figcaption {
     display: flex;
-    gap: 19px;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 24px;
+  }
+
+  main #projects figcaption {
+    gap: 10px;
+  }
+
+  main #projects article figure figcaption header {
+    display: flex;
+    justify-content: center;
     align-items: center;
     width: 100%;
   }
 
-  footer article figure,
-  footer article figure svg {
-    width: 25px;
-  }
-
-  footer article figure svg {
-    fill: #ffdf22;
-  }
-
-  footer nav {
-    width: 100%;
-  }
-
-  footer nav ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 19px;
-    width: 100%;
-  }
-
-  footer nav ul li a {
-    font-size: 8px;
-    font-family: Roboto;
+  main #projects article figure figcaption header h3 {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Poppins;
     color: #fff;
+  }
+
+  main #projects article figure figcaption a {
+    font-size: 18px;
     text-decoration: none;
+    font-family: Roboto;
+    font-weight: bold;
+    color: #ffdf22;
   }
 }
 
@@ -346,16 +497,382 @@ body {
   .container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     margin: auto;
     width: 100%;
     max-width: 728px;
     min-height: 100vh;
+  }
+
+  .main-header {
+    height: 41px;
+    background-color: #1b263b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .main-header div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main-header div a {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: Roboto;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .main-header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main-header nav button {
+    position: relative;
+    display: block;
+    width: 18px;
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+  }
+
+  .main-header nav button .bar,
+  .main-header nav button::after,
+  .main-header nav button::before {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 2px;
+    background-color: #fff;
+    margin: 4px 0px;
+    transition: 0.4s;
+  }
+
+  .main-header nav button.active::before {
+    transform: rotate(-45deg) translate(-4px, 4px);
+  }
+
+  .main-header nav button.active .bar {
+    opacity: 0;
+  }
+
+  .main-header nav button.active::after {
+    transform: rotate(45deg) translate(-4px, -4px);
+  }
+
+  .main-header nav ul {
+    background-color: #1b263b;
+    width: 268px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 19px;
+    position: absolute;
+    top: 41px;
+    right: 0;
+    z-index: 1;
+    transition: all ease-in 300ms;
+    opacity: 0;
+  }
+
+  .main-header nav ul li a {
+    font-size: 16px;
+    font-weight: normal;
+    color: #fff;
+    font-family: Roboto;
+    text-decoration: none;
+  }
+
+  main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main #home,
+  main #about,
+  main #skills,
+  main #projects {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+
+  main #home article {
+    width: 364px;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    opacity: 0;
+    animation: appear 500ms 800ms ease-in forwards;
+  }
+
+  main #home article h1 {
+    padding: 10px;
+    font-size: 28px;
+    font-family: Poppins;
+    font-weight: bold;
+    color: #fff;
+    line-height: 34px;
+  }
+
+  main #home article a {
+    padding: 10px;
+    text-align: center;
+    background-color: #ffdf22;
+    width: 122px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #1b263b;
+    font-weight: 500;
+    font-family: Roboto;
+  }
+
+  main #home figure,
+  main #home figure img {
+    width: 364px;
+  }
+
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  main #about figure {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 38px;
+    width: 100%;
+  }
+
+  main #about figure img {
+    width: 263px;
+    border-radius: 50%;
+  }
+
+  main #about figure figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  main #about figure figcaption header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+  }
+
+  main #about figure figcaption header h2,
+  main #skills header h2,
+  main #projects header h2 {
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: Poppins;
+  }
+
+  main #about figure figcaption p {
+    color: #fff;
+    line-height: 26px;
+    font-size: 16px;
+    font-family: Roboto;
+    padding: 10px;
+  }
+
+  main #skills,
+  main #projects {
+    flex-direction: column;
+  }
+
+  main #skills header,
+  main #projects header {
+    width: 100%;
+    display: flex;
+  }
+
+  main #skills article {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 19px;
+    width: 100%;
+  }
+
+  main #skills article figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  main #skills article figure svg {
+    width: 70px;
+  }
+
+  main #skills article figure .html {
+    fill: #e34c26;
+  }
+
+  main #skills article figure .css {
+    fill: #264de4;
+  }
+
+  main #skills article figure .js {
+    fill: #f0db4f;
+  }
+
+  main #skills article figure figcaption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main #skills article figure figcaption p {
+    font-family: Roboto;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+  }
+
+  main #projects article {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+  }
+
+  main #projects article figure,
+  main #projects img,
+  main #projects figure figcaption {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 350px;
+    gap: 24px;
+  }
+
+  main #projects figcaption {
+    gap: 10px;
+  }
+
+  main #projects article figure figcaption header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  main #projects article figure figcaption header h3 {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Poppins;
+    color: #fff;
+  }
+
+  main #projects article figure figcaption a {
+    font-size: 18px;
+    text-decoration: none;
+    font-family: Roboto;
+    font-weight: bold;
+    color: #ffdf22;
   }
 }
 
 @media only screen and (min-width: 1000px) {
   .container {
     max-width: 1240px;
+  }
+
+  .main-header nav {
+    position: fixed;
+    right: 0;
+    width: 516px;
+  }
+
+  .main-header nav ul {
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: relative;
+    top: 0;
+    opacity: 1;
+    transition: all ease-in 300ms;
+  }
+
+  .main-header nav ul li a {
+    transition: all ease-in 300ms;
+  }
+
+  .main-header nav button {
+    display: none;
+  }
+
+  main #home article {
+    width: 620px;
+  }
+
+  main #home article h1 {
+    font-size: 32px;
+  }
+
+  main #home article a {
+    transition: all ease-in 300ms;
+  }
+
+  main #home figure,
+  main #home figure img {
+    width: 620px;
+  }
+
+  .main-header nav ul li a:hover {
+    color: #75b671;
+  }
+
+  .main-header nav ul li a.active {
+    color: #ffdf22;
+    font-weight: bold;
+  }
+
+  main #home article a:hover {
+    color: #fff;
+    background-color: #75b671;
+  }
+
+  main #about figure figcaption header h2,
+  main #skills header h2,
+  main #projects header h2 {
+    font-size: 24px;
+  }
+
+  main #projects article figure,
+  main #projects img,
+  main #projects figure figcaption {
+    width: 390px;
   }
 }
