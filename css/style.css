@@ -291,12 +291,14 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: calc(100vh - 114px);
   }
 
   main #home,
   main #about,
   main #skills,
-  main #projects {
+  main #projects,
+  main #contact {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -396,7 +398,8 @@ section {
   }
 
   main #skills header,
-  main #projects header {
+  main #projects header,
+  main #contact header {
     width: 100%;
     display: flex;
   }
@@ -490,6 +493,98 @@ section {
     font-family: Roboto;
     font-weight: bold;
     color: #ffdf22;
+  }
+
+  main #contact form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    background-color: #fff;
+  }
+
+  main #contact form header h2 {
+    font-size: 18px;
+    font-family: Poppins;
+    color: #000;
+    font-weight: bold;
+  }
+
+  main #contact form div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  main #contact form div label {
+    color: #000;
+    font-size: 14px;
+    font-family: Roboto;
+  }
+
+  main #contact form div input,
+  main #contact form div textarea {
+    width: 100%;
+    font-size: 16px;
+    font-family: Roboto;
+    color: #111;
+    resize: none;
+  }
+
+  main #contact form button {
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #ffdf22;
+    color: #000;
+    outline: none;
+    appearance: none;
+    border: none;
+    font-family: Roboto;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 19px;
+    width: 100%;
+    height: 73px;
+  }
+
+  footer article {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 321px;
+  }
+
+  footer article figure,
+  footer article figure svg {
+    width: 25px;
+    fill: #ffdf22;
+  }
+
+  footer nav {
+    width: 100%;
+    display: flex;
+  }
+
+  footer nav ul {
+    width: 100%;
+    display: flex;
+    gap: 19px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer nav ul li a {
+    color: #fff;
+    font-size: 8px;
+    font-family: Roboto;
+    text-decoration: none;
   }
 }
 
@@ -595,12 +690,14 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: calc(100vh - 70px);
   }
 
   main #home,
   main #about,
   main #skills,
-  main #projects {
+  main #projects,
+  main #contact {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -705,7 +802,8 @@ section {
   }
 
   main #skills header,
-  main #projects header {
+  main #projects header,
+  main #contact header {
     width: 100%;
     display: flex;
   }
@@ -802,6 +900,100 @@ section {
     font-weight: bold;
     color: #ffdf22;
   }
+
+  main #contact form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    background-color: #fff;
+  }
+
+  main #contact form header h2 {
+    font-size: 22px;
+    font-family: Poppins;
+    color: #000;
+    font-weight: bold;
+  }
+
+  main #contact form div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  main #contact form div label {
+    color: #000;
+    font-size: 14px;
+    font-family: Roboto;
+  }
+
+  main #contact form div input,
+  main #contact form div textarea {
+    width: 100%;
+    font-size: 16px;
+    font-family: Roboto;
+    color: #111;
+    resize: none;
+  }
+
+  main #contact form button {
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #ffdf22;
+    color: #000;
+    outline: none;
+    appearance: none;
+    border: none;
+    font-family: Roboto;
+    align-self: flex-start;
+    width: 393px;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 19px;
+    width: 100%;
+    height: 29px;
+  }
+
+  footer article {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 210px;
+  }
+
+  footer article figure,
+  footer article figure svg {
+    width: 25px;
+    fill: #ffdf22;
+  }
+
+  footer nav {
+    width: 332px;
+    display: flex;
+  }
+
+  footer nav ul {
+    width: 100%;
+    display: flex;
+    gap: 19px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer nav ul li a {
+    color: #fff;
+    font-size: 8px;
+    font-family: Roboto;
+    text-decoration: none;
+  }
 }
 
 @media only screen and (min-width: 1000px) {
@@ -874,5 +1066,14 @@ section {
   main #projects img,
   main #projects figure figcaption {
     width: 390px;
+  }
+
+  main #contact form header h2 {
+    font-size: 24px;
+  }
+
+  main #contact form button {
+    width: 328px;
+    font-size: 20px;
   }
 }
