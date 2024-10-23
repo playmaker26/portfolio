@@ -1,9 +1,3 @@
-const nodeMailer = require('nodeMailer');
-
-
-
-
-
 let toggleNavigation = function() {
     const burger = document.querySelector('.burger');
     let openNavigation = false;
